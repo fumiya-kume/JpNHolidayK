@@ -1,7 +1,9 @@
+import org.jetbrains.dokka.gradle.DokkaTask
 plugins {
     kotlin("jvm") version "1.8.0"
     `java-library`
     signing
+    id("org.jetbrains.dokka") version "1.7.20"
 }
 
 group = "systems.kuu"
@@ -18,6 +20,7 @@ dependencies {
     testImplementation(kotlin("test"))
 }
 
+
 tasks.test {
     useJUnitPlatform()
 }
@@ -25,6 +28,17 @@ tasks.test {
 kotlin {
     jvmToolchain(8)
 }
+
+tasks.named<DokkaTask>("dokkaJavadoc") {
+    outputDirectory.set(File(buildDir, "docs/javadoc"))
+}
+
+tasks.create("javadocJar", Jar::class) {
+    dependsOn("dokkaJavadoc")
+    archiveClassifier.set("javadoc")
+    from(File(buildDir, "docs/javadoc"))
+}
+
 
 tasks.create("sourcesJar", Jar::class) {
     dependsOn("classes")
