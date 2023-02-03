@@ -1,10 +1,5 @@
 import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
 
-//import jdk.internal.loader.Resource
-//import jdk.jpackage.internal.resources.ResourceLocator
-//import java.io.File
-//import java.util.ResourceBundle
-
 object JpNHoliday {
 
     fun isReady() :Boolean{
