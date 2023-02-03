@@ -25,3 +25,9 @@ tasks.test {
 kotlin {
     jvmToolchain(8)
 }
+
+tasks.create("sourcesJar", Jar::class) {
+    dependsOn("classes")
+    archiveClassifier.set("sources")
+    from(sourceSets["main"].allSource)
+}
