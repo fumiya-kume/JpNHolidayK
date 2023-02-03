@@ -1,4 +1,3 @@
-
 import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
 import kotlinx.datetime.LocalDate
 import java.io.BufferedReader
@@ -13,11 +12,11 @@ object JpNHoliday {
     val text = b_reader.readText()
     val csvReader = csvReader().readAllWithHeader(text)
 
-    fun isReady() :Boolean{
+    fun isReady(): Boolean {
         return csvReader.isNotEmpty()
     }
 
-    fun isHoliday(year: Int, month:Int, day:Int):Boolean {
+    fun isHoliday(year: Int, month: Int, day: Int): Boolean {
         return csvReader.any {
             // YYYY/MM/DD
             val evetnDateString = it["国民の祝日・休日月日"]!!
@@ -29,5 +28,17 @@ object JpNHoliday {
         }
     }
 
-    private val name ="国民の祝日・休日名称"
+    fun getNationalHolidayName(year: Int, month: Int, day: Int): String? {
+        return csvReader.first() {
+            // YYYY/MM/DD
+            val evetnDateString = it["国民の祝日・休日月日"]!!
+            val eventDate = evetnDateString.split('/').run {
+                LocalDate(year = this[0].toInt(), monthNumber = this[1].toInt(), dayOfMonth = this[2].toInt())
+            }
+            val target = LocalDate(year = year, monthNumber = month, dayOfMonth = day)
+             eventDate == target
+        }[name]
+    }
+
+    private val name = "国民の祝日・休日名称"
 }
