@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "1.8.0"
+    `java-library`
 }
 
 group = "systems.kuu"
