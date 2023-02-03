@@ -2,9 +2,10 @@ import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
 
 object JpNHoliday {
 
+    val file = javaClass.getResource("syukujitsu.csv")
+    val csvReader = csvReader().readAll(file.readText())
+
     fun isReady() :Boolean{
-        val file = javaClass.getResource("syukujitsu.csv")
-        val csvReader = csvReader().readAll(file.readText())
         return csvReader.isNotEmpty()
     }
 
