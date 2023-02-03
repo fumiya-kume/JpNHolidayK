@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.Test
-import java.io.File
 import kotlin.test.assertTrue
 
 class JpNHolidayTest {
