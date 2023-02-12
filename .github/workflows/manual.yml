@@ -31,4 +31,4 @@ jobs:
           MAVEN_USERNAME: ${{ secrets.sonatype_username }}
           MAVEN_PASSWORD: ${{ secrets.sonatype_password }}
           signing.keyId: ${{ secrets.SIGNING_KEY_ID }}
-          signing.password: ${{ SIGNING_KEY_PASSWORD }}
+          signing.password: ${{ secrets.SIGNING_KEY_PASSWORD }}
