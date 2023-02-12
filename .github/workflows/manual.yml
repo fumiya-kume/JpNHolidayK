@@ -23,8 +23,8 @@ jobs:
         env:
          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
          PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-      - name: print
-        run: ls /home/runner/.gnupg
+      - name: extract key
+        run: gpg --export-secret-keys -o ~/.gnupg/secring.gpg
       - name: Publish package
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
