@@ -22,8 +22,7 @@ jobs:
         uses: crazy-max/ghaction-import-gpg@v5
         with: 
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }} 
-        env:
-         PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
       - name: extract key
         run: gpg --export-secret-keys -o /home/runner/secring.gpg
         env:
