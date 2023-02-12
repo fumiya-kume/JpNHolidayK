@@ -24,7 +24,7 @@ jobs:
          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
          PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
       - name: extract key
-        run: gpg --export-secret-keys -o ~/.gnupg/secring.gpg
+        run: gpg --export-secret-keys -o /home/runner/secring.gpg
         env:
           PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
       - name: Publish package
