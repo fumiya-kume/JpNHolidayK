@@ -39,10 +39,10 @@ jobs:
           arguments: publishMavenJavaPublicationToMavenRepository
         env:
           MAVEN_USERNAME: ${{ secrets.sonatype_username }}
-           MAVEN_PASSWORD: ${{ secrets.sonatype_password }}
+          MAVEN_PASSWORD: ${{ secrets.sonatype_password }}
 #           signing.keyId: ${{ secrets.SIGNING_KEY_ID }}
 #           signing.password: ${{ secrets.SIGNING_KEY_PASSWORD }}
 #           signing.secretKeyRingFile: ${{ secrets.SIGNING_SECRET_KEY_RING_FILE }}
           ORG_GRADLE_PROJECT_signingKey: ${{ secrets.ORG_GRADLE_PROJECT_signingKey }}
           ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.ORG_GRADLE_PROJECT_signingPassword }}
-          
+        
