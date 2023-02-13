@@ -29,6 +29,11 @@ jobs:
 #         run: gpg --export-secret-keys -o /home/runner/secring.gpg
 #         env:
 #           PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+      - name: Extract key
+        run: echo ${gpg-private-key} > ${signing.secretKeyRingFile}
+        env:
+          gpg-private-key: ${{ secrets.GPG_SIGNING_KEY }} 
+          signing.secretKeyRingFile: ${{ secrets.SIGNING_SECRET_KEY_RING_FILE }}
       - name: Publish package
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
@@ -38,5 +43,5 @@ jobs:
           MAVEN_PASSWORD: ${{ secrets.sonatype_password }}
           signing.keyId: ${{ secrets.SIGNING_KEY_ID }}
           signing.password: ${{ secrets.SIGNING_KEY_PASSWORD }}
-          # signing.secretKeyRingFile: ${{ secrets.SIGNING_SECRET_KEY_RING_FILE }}
+          signing.secretKeyRingFile: ${{ secrets.SIGNING_SECRET_KEY_RING_FILE }}
           
