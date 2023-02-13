@@ -46,7 +46,7 @@ publishing {
             artifactId = ProjectProperties.name
             version = ProjectProperties.versionName
             repositories {
-                mavenCentral {
+                maven {
                     url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
                     credentials {
                         username = project.findProperty("sonatype_username") as? String ?: ""
