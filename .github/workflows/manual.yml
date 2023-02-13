@@ -30,10 +30,9 @@ jobs:
 #         env:
 #           PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
       - name: Extract key
-        run: echo ${gpg-private-key} > ${signing.secretKeyRingFile}
+        run: echo ${gpg-private-key} > ${{ secrets.SIGNING_SECRET_KEY_RING_FILE }}
         env:
           gpg-private-key: ${{ secrets.GPG_SIGNING_KEY }} 
-          signing.secretKeyRingFile: ${{ secrets.SIGNING_SECRET_KEY_RING_FILE }}
       - name: Publish package
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
