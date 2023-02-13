@@ -16,7 +16,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }} 
+          gpg-private-key: ${{ secrets.GPG_SIGNING_KEY }} 
           gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
