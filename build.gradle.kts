@@ -43,8 +43,10 @@ java {
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {
+            artifactId = ProjectProperties.name
+            version = ProjectProperties.versionName
             repositories {
-                maven {
+                mavenCentral {
                     url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
                     credentials {
                         username = project.findProperty("sonatype_username") as? String ?: ""
@@ -65,6 +67,8 @@ publishing {
                 name.set("JpNHolidayK")
                 description.set("A concise description of my library")
                 packaging = "jar"
+                url.set(ProjectProperties.Url.site)
+                version = ProjectProperties.versionName
                 licenses {
                     license {
                         name.set("The Apache License, Version 2.0")
@@ -81,6 +85,7 @@ publishing {
                 scm {
                     connection.set("scm:git:git@github.com:fumiya-kume/JpNHolidayK.git")
                     developerConnection.set("scm:git:ssh://github.com:fumiya-kume/JpNHolidayK.git")
+                    url.set(ProjectProperties.Url.site)
                 }
             }
         }
@@ -88,8 +93,12 @@ publishing {
 }
 
 signing {
+    val signingKey: String? by project
+    val signingPassword: String? by project
+    useInMemoryPgpKeys(signingKey, signingPassword)
     sign(publishing.publications["mavenJava"])
 }
+
 fun appendDependency(
     parentNode: groovy.util.Node,
     groupId: String,
