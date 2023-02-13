@@ -47,7 +47,10 @@ publishing {
             version = ProjectProperties.versionName
             repositories {
                 maven {
-                    url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
+//                    url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
+                    val releasesRepoUrl = uri(layout.buildDirectory.dir("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"))
+                    val snapshotsRepoUrl = uri(layout.buildDirectory.dir("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+                    url = if (version.toString().endsWith("SNAPSHOT")) snapshotsRepoUrl else releasesRepoUrl
                     credentials {
                         username =
                             System.getenv("sonatype_username") ?: project.findProperty("sonatype_username") as? String
@@ -128,7 +131,7 @@ object ProjectProperties {
     private const val versionMajor: Int = 0
     private const val versionMinor: Int = 0
     private const val versionPatch: Int = 2
-    const val versionName: String = "$versionMajor.$versionMinor.$versionPatch"
+    const val versionName: String = "$versionMajor.$versionMinor.$versionPatch-SNAPSHOT"
 
     object Url {
         const val site: String = "https://github.com/fumiya-kume/JpNHolidayK"
