@@ -23,7 +23,6 @@ dependencies {
     testImplementation(kotlin("test"))
 }
 
-
 tasks.test {
     useJUnitPlatform()
 }
@@ -69,10 +68,10 @@ publishing {
                     credentials {
                         username =
                             System.getenv("sonatype_username") ?: project.findProperty("sonatype_username") as? String
-                                    ?: ""
+                                ?: ""
                         password =
                             System.getenv("sonatype_password") ?: project.findProperty("sonatype_password") as? String
-                                    ?: ""
+                                ?: ""
                     }
                 }
             }
