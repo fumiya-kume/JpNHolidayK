@@ -1,5 +1,4 @@
-# JpNHolidayK [![Master-CI](https://github.com/fumiya-kume/JpNHolidayK/actions/workflows/gradle.yml/badge.svg)](https://github.com/fumiya-kume/JpNHolidayK/actions/workflows/gradle.yml) ![Maven Central](https://img.shields.io/maven-central/v/systems.kuu/JpNHolidayK?style=flat-square)
-Util library for Japan National holiday in Kotlin
+# JpNHolidayK [![Master-CI](https://github.com/fumiya-kume/JpNHolidayK/actions/workflows/gradle.yml/badge.svg)](https://github.com/fumiya-kume/JpNHolidayK/actions/workflows/gradle.yml) ![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fs01.oss.sonatype.org%2Fservice%2Flocal%2Frepo_groups%2Fpublic%2Fcontent%2Fsystems%2Fkuu%2FJpNHolidayK%2Fmaven-metadata.xml)
 
 # How to Install
 
