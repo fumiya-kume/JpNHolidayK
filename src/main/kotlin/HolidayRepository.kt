@@ -1,3 +1,3 @@
 interface HolidayRepository {
-    fun getHolidayList():List<Holiday>
+    fun getHolidayList(): List<Holiday>
 }

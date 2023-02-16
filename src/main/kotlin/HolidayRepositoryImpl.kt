@@ -18,12 +18,12 @@ class HolidayRepositoryImpl : HolidayRepository {
                 it[name],
                 eventDate[0].toIntOrNull(),
                 eventDate[1].toIntOrNull(),
-                eventDate[2].toIntOrNull(),
+                eventDate[2].toIntOrNull()
             )
         }
     }
 
-    companion object{
+    companion object {
         private const val name = "国民の祝日・休日名称"
     }
 }
