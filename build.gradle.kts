@@ -6,6 +6,7 @@ plugins {
     `maven-publish`
     signing
     id("org.jetbrains.dokka") version "1.7.20"
+    id("org.jlleitschuh.gradle.ktlint") version "11.2.0"
 }
 
 group = "systems.kuu"
