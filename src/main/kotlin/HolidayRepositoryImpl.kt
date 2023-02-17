@@ -5,22 +5,23 @@ import java.io.InputStreamReader
 
 class HolidayRepositoryImpl : HolidayRepository {
     override fun getHolidayList(): List<Holiday> {
-        val file = javaClass.getResource("syukujitsu.csv")
-        val b_reader = BufferedReader(InputStreamReader(FileInputStream(file.file), "Shift-JIS"))
-        val text = b_reader.readText()
-        val csvReader = csvReader().readAllWithHeader(text)
-
-        return csvReader.map {
-            // YYYY/MM/DD
-            val evetDateString = it["国民の祝日・休日月日"]!!
-            val eventDate = evetDateString.split('/')
-            Holiday(
-                it[name],
-                eventDate[0].toIntOrNull(),
-                eventDate[1].toIntOrNull(),
-                eventDate[2].toIntOrNull()
-            )
-        }
+        val csvFile = javaClass.getResource("syukujitsu.csv")?.file
+        return csvFile?.run {
+            val bufferedReader = BufferedReader(InputStreamReader(FileInputStream(csvFile), "Shift-JIS"))
+            val text = bufferedReader.readText()
+            val csvReader = csvReader().readAllWithHeader(text)
+            return csvReader.map {
+                // YYYY/MM/DD
+                val evetDateString = it["国民の祝日・休日月日"]!!
+                val eventDate = evetDateString.split('/')
+                Holiday(
+                    it[name],
+                    eventDate[0].toIntOrNull(),
+                    eventDate[1].toIntOrNull(),
+                    eventDate[2].toIntOrNull()
+                )
+            }
+        } ?: emptyList()
     }
 
     companion object {
