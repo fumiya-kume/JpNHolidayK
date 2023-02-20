@@ -1,5 +1,5 @@
 class JpNHoliday(
-    private val holidayRepository: HolidayRepository = HolidayRepositoryImpl()
+    private val holidayRepository: HolidayRepository
 ) {
 
     fun isReady(): Boolean {

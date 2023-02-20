@@ -3,19 +3,19 @@ import java.io.BufferedReader
 import java.io.FileInputStream
 import java.io.InputStreamReader
 
-class HolidayRepositoryImpl : HolidayRepository {
+internal class HolidayRepositoryImpl : HolidayRepository {
     override fun getHolidayList(): List<Holiday> {
-        val csvFile = javaClass.getResource("syukujitsu.csv")?.file
+        val csvFile = javaClass.getResource(HOLIDAY_LIST_CSV_FILE)?.file
         return csvFile?.run {
-            val bufferedReader = BufferedReader(InputStreamReader(FileInputStream(csvFile), "Shift-JIS"))
+            val bufferedReader = BufferedReader(InputStreamReader(FileInputStream(csvFile), CHARSET_NAME))
             val text = bufferedReader.readText()
             val csvReader = csvReader().readAllWithHeader(text)
-            return csvReader.map {
+            csvReader.map {
                 // YYYY/MM/DD
-                val evetDateString = it["国民の祝日・休日月日"]!!
+                val evetDateString = it[KEY_HOLIDAY]!!
                 val eventDate = evetDateString.split('/')
                 Holiday(
-                    it[name],
+                    it[NAME_HOLIDAY],
                     eventDate[0].toIntOrNull(),
                     eventDate[1].toIntOrNull(),
                     eventDate[2].toIntOrNull()
@@ -25,6 +25,9 @@ class HolidayRepositoryImpl : HolidayRepository {
     }
 
     companion object {
-        private const val name = "国民の祝日・休日名称"
+        private const val HOLIDAY_LIST_CSV_FILE = "syukujitsu.csv"
+        private const val CHARSET_NAME = "Shift-JIS"
+        private const val KEY_HOLIDAY = "国民の祝日・休日月日"
+        private const val NAME_HOLIDAY = "国民の祝日・休日名称"
     }
 }
