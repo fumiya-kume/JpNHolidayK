@@ -1,5 +1,5 @@
 class JpNHoliday(
-    private val holidayRepository: HolidayRepository
+    private val holidayRepository: HolidayRepository = HolidayRepository.getInstance()
 ) {
 
     fun isReady(): Boolean {
