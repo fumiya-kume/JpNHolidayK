@@ -13,7 +13,7 @@ class JpNHolidayTest {
 
     @Test
     fun `load csv file`() {
-        assertTrue(jpNHoliday.isReady())
+        assertTrue(jpNHoliday.getHolidayList().any())
     }
 
     @Test

@@ -2,8 +2,8 @@ class JpNHoliday(
     private val holidayRepository: HolidayRepository
 ) {
 
-    fun isReady(): Boolean {
-        return holidayRepository.getHolidayList().isNotEmpty()
+    fun getHolidayList(): List<Holiday> {
+        return holidayRepository.getHolidayList()
     }
 
     fun isHoliday(year: Int, month: Int, day: Int): Boolean {
