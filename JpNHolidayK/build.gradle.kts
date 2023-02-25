@@ -16,7 +16,6 @@ repositories {
 }
 
 dependencies {
-    api("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
     implementation("com.github.doyaaaaaken:kotlin-csv-jvm:1.8.0")
 
     testImplementation(kotlin("test"))
