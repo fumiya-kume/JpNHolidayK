@@ -145,7 +145,13 @@ object ProjectProperties {
     private const val versionMajor: Int = 0
     private const val versionMinor: Int = 0
     private const val versionPatch: Int = 2
-    const val versionName: String = "$versionMajor.$versionMinor.$versionPatch-SNAPSHOT"
+    private const val isSnapshotEnabled: Boolean = false
+    private val snapshotString = if (isSnapshotEnabled) {
+        "-SNAPSHOT"
+    } else {
+        ""
+    }
+    val versionName: String = "$versionMajor.$versionMinor.$versionPatch$snapshotString"
 
     object Url {
         const val site: String = "https://github.com/fumiya-kume/JpNHolidayK"
