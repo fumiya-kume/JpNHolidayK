@@ -12,8 +12,8 @@ internal class HolidayRepositoryImpl : HolidayRepository {
             val csvReader = csvReader().readAllWithHeader(text)
             csvReader.map {
                 // YYYY/MM/DD
-                val evetDateString = it[KEY_HOLIDAY]!!
-                val eventDate = evetDateString.split('/')
+                val eventDateString = it[KEY_HOLIDAY]!!
+                val eventDate = eventDateString.split('/')
                 Holiday(
                     it[NAME_HOLIDAY],
                     eventDate[0].toIntOrNull(),
