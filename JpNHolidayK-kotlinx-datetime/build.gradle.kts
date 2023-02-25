@@ -128,8 +128,8 @@ object ProjectProperties {
 
     private const val versionMajor: Int = 0
     private const val versionMinor: Int = 0
-    private const val versionPatch: Int = 2
-    private const val isSnapshotEnabled: Boolean = false
+    private const val versionPatch: Int = 3
+    private const val isSnapshotEnabled: Boolean = true
     private val snapshotString = if (isSnapshotEnabled) {
         "-SNAPSHOT"
     } else {
