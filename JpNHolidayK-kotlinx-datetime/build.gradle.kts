@@ -9,14 +9,15 @@ plugins {
 }
 
 group = "systems.kuu"
-version = "0.0.3"
+version = "0.0.1"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation("com.github.doyaaaaaken:kotlin-csv-jvm:1.8.0")
+    implementation("systems.kuu:JpNHolidayK:0.0.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
 
     testImplementation(kotlin("test"))
 }
@@ -68,7 +69,7 @@ publishing {
                 }
             }
             pom {
-                name.set("JpNHolidayK")
+                name.set(ProjectProperties.name)
                 description.set("A concise description of my library")
                 packaging = "jar"
                 url.set(ProjectProperties.Url.site)
@@ -81,8 +82,8 @@ publishing {
                 }
                 developers {
                     developer {
-                        id.set("kuu")
-                        name.set("Kuu")
+                        id.set(ProjectProperties.developerId)
+                        name.set(ProjectProperties.developerName)
                         email.set("fumiya.kume@hotmail.com")
                     }
                 }
@@ -120,7 +121,7 @@ fun appendDependency(
 
 object ProjectProperties {
     const val groupId: String = "systems.kuu"
-    const val name: String = "JpNHolidayK"
+    const val name: String = "JpNHolidayK-kotlinx-datetime"
     const val description: String = "This library helps Japan National holiday"
     const val developerId: String = "kuu"
     const val developerName: String = "Kume Fumiya"
