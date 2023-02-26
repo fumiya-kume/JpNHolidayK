@@ -1,6 +1,5 @@
 package systems.kuu
 
-import HolidayRepository
 import JpNHoliday
 
 object Main {
@@ -9,6 +8,6 @@ object Main {
     }
 
     fun getNewYearHoliday(): String? {
-        return JpNHoliday(HolidayRepository.getInstance()).getNationalHolidayName(1955, 1, 1)
+        return JpNHoliday().getNationalHolidayName(1955, 1, 1)
     }
 }
