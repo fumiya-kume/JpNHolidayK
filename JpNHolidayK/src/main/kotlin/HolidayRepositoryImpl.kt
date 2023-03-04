@@ -5,7 +5,7 @@ import java.io.InputStreamReader
 
 internal class HolidayRepositoryImpl : HolidayRepository {
     override fun getHolidayList(): List<Holiday> {
-        val csvFile = javaClass.getResource(HOLIDAY_LIST_CSV_FILE)?.file
+        val csvFile = HolidayRepositoryImpl::class.java.getResource(HOLIDAY_LIST_CSV_FILE)?.file
         return csvFile?.run {
             val bufferedReader = BufferedReader(InputStreamReader(FileInputStream(csvFile), CHARSET_NAME))
             val text = bufferedReader.readText()
