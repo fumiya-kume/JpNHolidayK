@@ -12,14 +12,14 @@
 ## Gradle
 
 ```groove
-implementation 'systems.kuu:JpNHolidayK:1.0.0'
+implementation 'systems.kuu:JpNHolidayK:1.0.1'
 implementation 'systems.kuu:JpNHolidayK-kotlinx-datetime:1.0.0'
 ```
 
 ## Gradle(Kotlin)
 
 ```kt
-implementation("systems.kuu:JpNHolidayK:1.0.0")
+implementation("systems.kuu:JpNHolidayK:1.0.1")
 implementation("systems.kuu:JpNHolidayK-kotlinx-datetime:1.0.0")
 ```
 
