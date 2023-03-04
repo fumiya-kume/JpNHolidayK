@@ -11,11 +11,11 @@
 
 ## Gradle
 ```
-implementation 'systems.kuu:JpNHolidayK:0.0.2'
+implementation 'systems.kuu:JpNHolidayK:1.0.0'
 ```
 
 ## Gradle(Kotlin)
 ```
-implementation("systems.kuu:JpNHolidayK:0.0.2")
+implementation("systems.kuu:JpNHolidayK:1.0.0")
 ```
 
