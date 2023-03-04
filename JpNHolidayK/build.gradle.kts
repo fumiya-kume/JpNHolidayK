@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "systems.kuu"
-version = "0.0.3"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
@@ -125,9 +125,9 @@ object ProjectProperties {
     const val developerId: String = "kuu"
     const val developerName: String = "Kume Fumiya"
 
-    private const val versionMajor: Int = 0
+    private const val versionMajor: Int = 1
     private const val versionMinor: Int = 0
-    private const val versionPatch: Int = 3
+    private const val versionPatch: Int = 0
     private const val isSnapshotEnabled: Boolean = false
     private val snapshotString = if (isSnapshotEnabled) {
         "-SNAPSHOT"
