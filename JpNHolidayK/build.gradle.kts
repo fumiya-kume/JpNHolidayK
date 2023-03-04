@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "systems.kuu"
-version = "1.0.1"
+version = "1.0.2"
 
 repositories {
     mavenCentral()
@@ -27,6 +27,12 @@ tasks.test {
 
 kotlin {
     jvmToolchain(8)
+}
+
+sourceSets{
+    main {
+        output.setResourcesDir(output.classesDirs)
+    }
 }
 
 tasks.named<DokkaTask>("dokkaJavadoc") {
@@ -127,8 +133,8 @@ object ProjectProperties {
 
     private const val versionMajor: Int = 1
     private const val versionMinor: Int = 0
-    private const val versionPatch: Int = 1
-    private const val isSnapshotEnabled: Boolean = false
+    private const val versionPatch: Int = 2
+    private const val isSnapshotEnabled: Boolean = true
     private val snapshotString = if (isSnapshotEnabled) {
         "-SNAPSHOT"
     } else {
