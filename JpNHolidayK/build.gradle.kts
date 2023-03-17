@@ -29,12 +29,6 @@ kotlin {
     jvmToolchain(8)
 }
 
-sourceSets{
-    main {
-        output.setResourcesDir(output.classesDirs)
-    }
-}
-
 tasks.named<DokkaTask>("dokkaJavadoc") {
     outputDirectory.set(File(buildDir, "docs/javadoc"))
 }
@@ -134,8 +128,7 @@ object ProjectProperties {
     private const val versionMajor: Int = 1
     private const val versionMinor: Int = 0
     private const val versionPatch: Int = 2
-    private const val isSnapshotEnabled: Boolean = true
-    private val snapshotString = if (isSnapshotEnabled) {
+    private val snapshotString = if (System.getenv("is_release") == "true") {
         "-SNAPSHOT"
     } else {
         ""
