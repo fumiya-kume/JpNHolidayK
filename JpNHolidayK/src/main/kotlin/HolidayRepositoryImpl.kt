@@ -25,7 +25,7 @@ internal class HolidayRepositoryImpl : HolidayRepository {
     }
 
     companion object {
-        private const val HOLIDAY_LIST_CSV_FILE = "./syukujitsu.csv"
+        private const val HOLIDAY_LIST_CSV_FILE = "syukujitsu.csv"
         private const val CHARSET_NAME = "Shift-JIS"
         private const val KEY_HOLIDAY = "国民の祝日・休日月日"
         private const val NAME_HOLIDAY = "国民の祝日・休日名称"
