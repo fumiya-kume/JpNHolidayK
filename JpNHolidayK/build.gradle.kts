@@ -128,11 +128,7 @@ object ProjectProperties {
     private const val versionMajor: Int = 1
     private const val versionMinor: Int = 0
     private const val versionPatch: Int = 2
-    private val snapshotString = if (System.getenv("is_release") == "true") {
-        "-SNAPSHOT"
-    } else {
-        ""
-    }
+    private val snapshotString = "-SNAPSHOT".takeIf { System.getenv("is_release") == "true" }
     val versionName: String = "$versionMajor.$versionMinor.$versionPatch$snapshotString"
 
     object Url {
