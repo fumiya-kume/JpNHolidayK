@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.doyaaaaaken:kotlin-csv-jvm:1.8.0")
+    implementation("com.github.doyaaaaaken:kotlin-csv-jvm:1.9.0")
 
     testImplementation(kotlin("test"))
 }
