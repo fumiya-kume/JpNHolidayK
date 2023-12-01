@@ -17,7 +17,7 @@ repositories {
 
 dependencies {
     implementation("systems.kuu:JpNHolidayK:1.0.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
 
     testImplementation(kotlin("test"))
 }
