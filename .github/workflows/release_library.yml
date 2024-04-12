@@ -19,7 +19,7 @@ jobs:
           gpg-private-key: ${{ secrets.GPG_SIGNING_KEY }} 
           gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
       - name: Validate Gradle wrapper
-        uses: gradle/wrapper-validation-action@v2
+        uses: gradle/wrapper-validation-action@v3
       - name: Publish package
         uses: gradle/gradle-build-action@v2
         with:
