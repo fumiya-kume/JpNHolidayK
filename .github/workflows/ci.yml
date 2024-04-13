@@ -26,7 +26,7 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     - name: Build with Gradle
-      uses: gradle/gradle-build-action@v2
+      uses: gradle/gradle-build-action@v3
       with:
         arguments: build
   test:
@@ -39,7 +39,7 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
       - name: Test with Gradle
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/gradle-build-action@v3
         with:
           arguments: test
   lint:
@@ -52,6 +52,6 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
       - name: Ktlint
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/gradle-build-action@v3
         with:
           arguments: ktlintCheck
