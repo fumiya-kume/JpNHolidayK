@@ -9,7 +9,7 @@ buildscript {
 
 plugins {
     id("org.jetbrains.dokka") version "2.0.0" apply false
-    id("org.jlleitschuh.gradle.ktlint") version "11.6.1" apply false
+    id("org.jlleitschuh.gradle.ktlint") version "12.3.0" apply false
     kotlin("jvm") version "2.2.0" apply false
 }
 
