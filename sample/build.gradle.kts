@@ -13,8 +13,8 @@ repositories {
 dependencies {
     implementation("systems.kuu:JpNHolidayK:1.0.1")
 
-    testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.1")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.1")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.2")
 }
 
 tasks.getByName<Test>("test") {
